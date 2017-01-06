@@ -1,0 +1,36 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "crypto-js": "^3.1.8",
+    "date-now": "^1.0.1",
+    "date-only": "^1.0.1",
+    "date-time": "^1.1.0",
+    "debug": "~2.2.0",
+    "ejs": "^1.0.0",
+    "express": "3.5.1",
+    "express-myconnection": "1.0.4",
+    "file-system": "^2.2.1",
+    "fs": "0.0.1-security",
+    "image-size": "^0.5.0",
+    "isemail": "^2.2.1",
+    "isodate-convert": "^0.1.0",
+    "jade": "*",
+    "md5": "^2.2.1",
+    "moment-timezone": "^0.5.9",
+    "morgan": "~1.7.0",
+    "mysql": "2.2.0",
+    "node-uuid": "^1.4.7",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "serve-favicon": "~2.3.0",
+    "static-favicon": "~1.0.0",
+    "validator": "^6.1.0"
+  }
+}

@@ -1,0 +1,19 @@
+<div>
+	<h1>haiiii</h1>
+Select RO<br>
+<input type="text" id="srt" placeholder="select RO id"><br>
+
+<%function run() {%>
+        <%var e = document.getElementById("drpdwn");%>
+        <%var strUser = e.options[e.selectedIndex].text;%>
+        <%document.getElementById("srt").value =strUser;%>
+   <% }%>
+<br>
+
+<select id="drpdwn"  onchange="run();">
+<option value="Select_RO" selected>Select RO</option>
+<%for(var i=0;i < 10;i++){ %>
+<option value='<%= (i+1) %>'/><%=(i+1)%> </option>
+<% }%>                 
+</select>
+</div>

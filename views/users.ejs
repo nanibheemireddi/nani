@@ -1,0 +1,50 @@
+<%- include layouts/header.ejs %>
+
+<div Class="page-data">
+<div Class="data-btn">
+	<button onClick="addUser();">+ Add User</button>
+</div>
+<div class="data-table">
+	<table border="2" cellpadding="7" cellspacing="7">
+		<tr>
+			<th width="50px">Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Mobileno</th>
+			<th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Zipcode</th>
+			<th width="120px">Action</th>
+		</tr>
+		<% if(data.length){
+			
+             for(var i = 0;i < data.length;i++) { %>
+				
+                <tr>
+					<td align="center"><%= (i+1) %></td>
+					<td align="center"><%= data[i].name %></td>
+					<td align="center"><%= data[i].email %></td>
+					<td align="center"><%= data[i].mobileno %></td>
+					<td align="center"><%= data[i].city %></td>
+					<td align="center"><%= data[i].state %></td>
+					<td align="center"><%= data[i].country %></td>
+					<td align="center"><%= data[i].zipcode %></td>
+					<td>
+                        <a class="a-inside edit" href="../users/edit/<%=data[i].userid%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../users/delete/<%=data[i].userid%>">Delete</a>
+                       
+                    </td>
+				</tr>
+		<% } 
+				}else{ %>
+				<tr>
+					<td colspan="3">No User</td>
+				</tr>
+		<%	} %>	
+	   </table>
+    </div>
+</div>
+
+<%- include layouts/footer.ejs %>

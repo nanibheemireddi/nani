@@ -1,0 +1,51 @@
+<%- include layouts/header.ejs %>
+
+<div class="page-data">
+	<form method="post" action="/product/edit/<%= data[0].productid %>">
+		<table cellpadding="11">
+			<tr>
+				<td class="label">Category</td>
+					<td>
+						<select name="categoryid">
+						<% for(var i = 0; i < dataCategory.length; i++) { %>
+							<option value = "<%= dataCategory[i].categoryid %>" <%= dataCategory[i].categoryid == data[0].categoryid ? 'selected' : ''%> >
+								<%= dataCategory[i].name %>
+							</option>
+						<%	} %>
+						</select>
+					</td>
+			</tr>
+			<tr>
+				<td class="label">Name</td><td>:<input type="text" name="name" value="<%= data[0].name %>" required></td>
+
+			</tr>
+			<tr>
+				<td class="label">Description</td><td>:<input type="text" name="description" value="<%= data[0].description %>" required></td>
+			</tr>
+			<tr>
+				<td class="label">Price</td><td>:<input type="text" name="price" value="<%= data[0].price %>" required></td>
+
+			</tr>
+			<tr>
+				<td class="label">Quantity</td><td>:<input type="text" name="quantity" value="<%= data[0].quantity %>" required></td>
+			</tr>
+			<tr>
+				<td class="label">ExistingImage</td><td><img src="<%= '/images/' + data[0].image %>"  height="200" width="200"/></td>
+			</tr>
+			<tr>
+				<td class="label">Image</td><td>:<input type="file" name="myimage"  accept="image/*" ></td>
+			</tr>
+			<tr>
+				<td class="label">Status</td><td>: <input type="checkbox" name="status" value = "active" <% if (data[0].status === 'active') { %> checked <% } %> ></td>
+			</tr>
+			<tr>
+                <td class="label"></td>
+                <td>
+                    &nbsp; <input type="submit" name="submit" value="Save">
+                    <input type="button" name="cancel" value="Cancel" class="cancel" onClick="cancelProduct()">
+                 </td>
+            </tr>
+		</table>
+	</form>
+</div>
+<%- include layouts/footer.ejs %>

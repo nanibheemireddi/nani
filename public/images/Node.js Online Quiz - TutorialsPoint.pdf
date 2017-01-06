@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm -->
+<html class=" js no-touch csstransforms3d csstransitions" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Basic -->
+
+<title>Node.js Online Quiz - TutorialsPoint</title>
+<meta name="description" content="Node.js Online Quiz - Learn Node.js framework in simple and easy steps starting from Introduction, Environment Setup, Node Package Manager, Node Callbacks Concept, Node Buffers Module, Node Streams, Node File System, Node Utility Modules, Node Web Module, Node Express Application, Node RESTFul API, Node Scaling Application">
+<meta name="keywords" content="Introduction, Environment Setup, Node Package Manager, Global vs Local Installation, Node Callbacks Concept, locking vs non-blocking Code, Event Driven Programming, Event Loop Overview, Event Emitters, Implementing Callbacks, Node Buffers Module,JSON to JS Objects, JS Objects to JSON, Buffer Objects, Node Streams, Reading Stream, Writing Stream, Piping Stream, Node File System, File System Module, Synchronous vs Asynchronous Node, Utility Modules,Node Console Module, Node Process Module, Node OS Module, Node Path Module, Node Net Module, Node DNS Module, Node Domain Module, Node Web Module,HTTP Servers with Node.js, HTTP Clients with Node.js, Node Express Application, Express Overview, Installing Express, Express Generator, Node RESTFul API, Node Scaling Application,The exec function,The spawn function,The fork function">
+<!--<base href="https://www.tutorialspoint.com/">--><base href=".">
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="471319149685276">
+<meta property="og:site_name" content="www.tutorialspoint.com">
+<meta name="robots" content="index, follow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script src="./Node.js Online Quiz - TutorialsPoint_files/ca-pub-7133395778201029.js"></script><script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/script-min-v4.js"></script>
+<link rel="stylesheet" href="./Node.js Online Quiz - TutorialsPoint_files/style-min.css">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(/nodejs/images/try-it.jpg) top right no-repeat !important}div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #82af25 url(/images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #82af25 !important;}
+.submenu-item{ border-bottom: 2px solid #82af25 !important; border-top: 2px solid #82af25 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()" style="">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img src="./Node.js Online Quiz - TutorialsPoint_files/loading-cg.gif" alt="" width="70" height="70">
+   </div>
+</div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="https://www.tutorialspoint.com/index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="./Node.js Online Quiz - TutorialsPoint_files/logo.png">
+      </a>
+      </h1>			
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="https://www.tutorialspoint.com/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a href="https://www.send18.com/"><i class="fa fa-send"></i> &nbsp;Send18</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="./Node.js Online Quiz - TutorialsPoint_files/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="https://www.tutorialspoint.com/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+         <!-- search code here  --> 
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 361px!important"> <i class="icon icon-bars"></i> </button>
+   </div>
+   <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="https://www.tutorialspoint.com/index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/tutor_connect/index.php"><i class="fa-user"> </i> Tutor Connect</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == &#39;Search your favorite tutorials...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search your favorite tutorials...&#39;;}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+         <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+         
+      </div>
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/nodejs-mini-logo.jpg" alt="Node.js Tutorial">
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Node.js Tutorial</li>
+<li><a href="https://www.tutorialspoint.com/nodejs/index.htm">Node.js - Home</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm">Node.js - Introduction</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_environment_setup.htm">Node.js - Environment Setup</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_first_application.htm">Node.js - First Application</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_repl_terminal.htm">Node.js - REPL Terminal</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_npm.htm">Node.js - Package Manager (NPM)</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_callbacks_concept.htm">Node.js - Callbacks Concept</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_event_loop.htm">Node.js - Event Loop</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm">Node.js - Event Emitter</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_buffers.htm">Node.js - Buffers</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_streams.htm">Node.js - Streams</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm">Node.js - File System</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_global_objects.htm">Node.js - Global Objects</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_utility_module.htm">Node.js - Utility Modules</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_web_module.htm">Node.js - Web Module</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm">Node.js - Express Framework</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_restful_api.htm">Node.js - RESTFul API</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_scaling_application.htm">Node.js - Scaling Application</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_packaging.htm">Node.js - Packaging</a></li>
+<li class="heading">Node.js Useful Resources</li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_quick_guide.htm">Node.js - Quick Guide</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_useful_resources.htm">Node.js - Useful Resources</a></li>
+<li><a href="https://www.tutorialspoint.com/nodejs/nodejs_discussion.htm">Node.js - Dicussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+ </aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Node.js Online Quiz</h1>
+<div class="topgooglead">
+<hr>
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/show_ads.js"> 
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Node.js Online Quiz - TutorialsPoint_files/saved_resource.html"></iframe></ins></ins>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/nodejs/nodejs_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr>
+<p>Following quiz provides Multiple Choice Questions (MCQs) related to <b>Node.js Framework</b>. You will have to read all the given answers and click over the correct answer. If you are not sure about the answer then you can check the answer using <b>Show Answer</b> button. You can use <b>Next Quiz</b> button to check new set of questions in the quiz.</p>
+<img src="./Node.js Online Quiz - TutorialsPoint_files/questions_and_answers.png" alt="Questions and Answers">
+
+<div class="QA">
+<div class="Q" id="Q5">
+<p><span>Q 1</span> - How Node based web servers are different from traditional web servers?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Node based server process request much faster than traditional server.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>B</span> - Node based server uses a single threaded model and can services much larger number of requests than traditional server like Apache HTTP Server.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - There is no much difference between the two.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A5">
+<h3>Answer : B</h3>
+<h3>Explaination</h3> 
+<p>Node based server uses a single threaded model and can services much larger number of requests than traditional server like Apache HTTP Server.</p>
+</div>
+<div class="E" id="E5">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;5&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q13">
+<p><span>Q 2</span> - Which of the following command will show version of Node?</p>
+<p><a class="false selected"><span class="wrong">A</span> - $ npm --version</a></p>
+<p><a class="true selected"><span class="correct">B</span> - $ node --version</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - $ npm getVersion</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - $ node getVersion</a></p>
+</div>
+<div class="A" id="A13">
+<h3>Answer : B</h3>
+</div>
+<h3>Explaination</h3>
+<p>Executing $ node --version command will show the version of Node instance.</p>
+<div class="E" id="E13">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;13&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q28">
+<p><span>Q 3</span> - Which of the following code gets length of a buffer buf?</p>
+<p><a class="true selected"><span class="correct">A</span> - buf.length</a></p>
+<p><a class="false selected"><span class="wrong">B</span> - buf.size</a></p>
+<p><a class="false selected"><span class="wrong">C</span> - buf.length()</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - buf.size()</a></p>
+</div>
+<div class="A" id="A28">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>buf.length returns size of a node buffer in bytes.</p>
+</div>
+<div class="E" id="E28">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;28&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q32">
+<p><span>Q 4</span> - Which of the following is true about Chaining streams?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Chanining is a mechanism to connect output of one stream to another stream and create a chain of multiple stream operations.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Chanining is normally used with piping operations.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A32">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>Chanining is a mechanism to connect output of one stream to another stream and create a chain of multiple stream operations. It is normally used with piping operations.</p>
+</div>
+<div class="E" id="E32">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;32&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q43">
+<p><span>Q 5</span> - Which method of fs module is used to read a directory?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - fs.readDirectory(path[, mode], callback)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - fs.read(path[, mode], callback)</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - fs.readdir(path, callback)</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A43">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>fs.readdir(path, callback)is  the method which is used to read a directory.</p>
+</div>
+<div class="E" id="E43">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;43&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q55">
+<p><span>Q 6</span> - Which of the following code prints current directory?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - console.log('Current directory: ' + process.cwd());</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - console.log('Current directory: ' + console.cwd());</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - console.log('Current directory: ' + process.currenWorkingDirectory());</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A55">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>process.cwd() can be used to get the current working directory.</p>
+</div>
+<div class="E" id="E55">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;55&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q66">
+<p><span>Q 7</span> - Which of the following is the correct way to get a joint path?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - path.join('/test', 'test1', '2slashes/1slash', 'tab', '..')</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - path.combine('/test', 'test1', '2slashes/1slash', 'tab', '..')</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - buffer.join('/test', 'test1', '2slashes/1slash', 'tab', '..')</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A66">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>path.join([path1][, path2][, ...]) joins all arguments together and normalize the resulting path.</p>
+</div>
+<div class="E" id="E66">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;66&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q80">
+<p><span>Q 8</span> - Which of the following is true about internal binding with respect to domain module?</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - Error emmitter is executing its code within run method of a domain.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Error emmitter is added explicitly to a domain using its add method.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A80">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Error emmitter is executing its code within run method of a domain in case of internal binding.</p>
+</div>
+<div class="E" id="E80">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;80&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div>
+<div class="QA">
+<div class="Q" id="Q86">
+<p><span>Q 9</span> - Can we create child processes in Node applications.</p>
+<p><a class="true" href="javascript:void(0);"><span>A</span> - true</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - false</a></p>
+</div>
+<div class="A" id="A86">
+<h3>Answer : A</h3>
+<h3>Explaination</h3>
+<p>Node facilitates creation of child processes to leverage parallel processing on multi-core cpu based systems.</p>
+</div>
+<div class="E" id="E86">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;86&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><div class="QA">
+<div class="Q" id="Q91">
+<p><span>Q 10</span> - Which of the following is true about RESTful webservices?</p>
+<p><a class="false" href="javascript:void(0);"><span>A</span> - Webservices based on REST Architecture are known as RESTful web services.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>B</span> - Webservices uses HTTP methods to implement the concept of REST architecture.</a></p>
+<p><a class="true" href="javascript:void(0);"><span>C</span> - Both of the above.</a></p>
+<p><a class="false" href="javascript:void(0);"><span>D</span> - None of the above.</a></p>
+</div>
+<div class="A" id="A91">
+<h3>Answer : C</h3>
+<h3>Explaination</h3>
+<p>Webservices based on REST Architecture are known as RESTful web services. These webservices uses HTTP methods to implement the concept of REST architecture.</p>
+</div>
+<div class="E" id="E91">
+<textarea id="Message" name="message" class="form-control what"></textarea>
+</div>
+<div class="B">
+<button type="button" class="btn btn-default btn-xsm" onclick="javascript:showAnswer(&#39;91&#39;)"><i class="icon  icon-sort"></i> <span>Show Answer</span></button>
+</div>
+</div><hr>
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/nodejs/nodejs_questions_answers.htm"><i class="icon icon-arrow-circle-o-left big-font"></i> Questions Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm">Next Quiz <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/exams-min.js"></script>
+<div class="parent-file">nodejs_questions_answers.htm</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:400px;margin:0;padding:0;position:relative;visibility:visible;width:580px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:400px;margin:0;padding:0;position:relative;visibility:visible;width:580px;background-color:transparent"><iframe width="580" height="400" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Node.js Online Quiz - TutorialsPoint_files/saved_resource(1).html"></iframe></ins></ins>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://www.facebook.com/sharer.php?u=&#39; + &#39;http://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/facebookIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://twitter.com/share?url=&#39; + &#39;http://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/twitterIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://www.linkedin.com/cws/share?url=&#39; + &#39;http://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/linkedinIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://plus.google.com/share?url=http://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/googlePlusIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=456,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/StumbleUponIcon.jpg" alt="img">
+</a>
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open(&#39;https://reddit.com/submit?url=http://www.tutorialspoint.com/nodejs/nodejs_online_quiz.htm&amp;title=&#39;+ document.title,&#39;sharer&#39;,&#39;toolbar=0,status=0,width=626,height=656,top=&#39;+sTop+&#39;,left=&#39;+sLeft);return false;">
+<img src="./Node.js Online Quiz - TutorialsPoint_files/reddit.jpg" alt="img">
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/show_ads.js">
+</script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./Node.js Online Quiz - TutorialsPoint_files/saved_resource(2).html"></iframe></ins></ins>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/show_ads.js">
+</script><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" src="./Node.js Online Quiz - TutorialsPoint_files/saved_resource(3).html"></iframe></ins></ins>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/show_ads.js">
+</script><ins id="aswift_4_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" src="./Node.js Online Quiz - TutorialsPoint_files/saved_resource(4).html"></iframe></ins></ins>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="./Node.js Online Quiz - TutorialsPoint_files/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="https://www.tutorialspoint.com/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/faq.htm">FAQ's</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/about_helping.htm">Helping</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>© Copyright 2016. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == &#39;Enter email for newsletter...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Enter email for newsletter...&#39;;}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/custom-min.js"></script><a class="scroll-to-top visible" href="https://www.tutorialspoint.com/#" id="scrollToTop"><i class="icon icon-chevron-up icon-white"></i></a>
+<script src="./Node.js Online Quiz - TutorialsPoint_files/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script type="text/javascript" src="./Node.js Online Quiz - TutorialsPoint_files/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+   var tryit = new $.TryIt('/nodejs/try_nodejs.php');
+   tryit.compile();
+</script><div id="source" style="display:none;"></div><div id="supportsource" style="display:none;"></div><div id="utilsource" style="display:none;"></div><div id="extrasource" style="display:none;"></div><div id="inputs" style="display:none;"></div><div id="filename" style="display:none;"></div>
+
+
+<div class="autocomplete-suggestions " style="top: 413px; left: 0px; width: 8px;"></div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>

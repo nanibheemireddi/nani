@@ -1,0 +1,6 @@
+ui: mocha-bdd
+browsers:
+  - name: chrome
+    version: latest
+scripts:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mocha/2.2.5/mocha.min.js"
